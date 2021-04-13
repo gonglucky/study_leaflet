@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>leaflet学习之路一显示地图</title>
+    <script src="../js/leaflet.js"></script>
+    <link href="../css/leaflet.css" rel="stylesheet"/>
+    <style>
+        #map-container{
+            height: 400px;
+            width: 600px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="map-container"></div>
+    <script type="text/javascript">
+        var m = L.map('map-container').setView([51.505, -0.09], 8);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>'
+            }).addTo(m);
+    </script>
+</body>
+</html>
